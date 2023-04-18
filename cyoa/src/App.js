@@ -17,15 +17,21 @@ function App() {
     narrativeData[currentNarrative].options[1].text
   );
 
+  const [currentImage, setCurrentImage] = useState(0);
+
   function changeNarrative(optionIndex) {
     const option = narrativeData[currentNarrative].options[optionIndex];
     setCurrentNarrative(option.nextNarrative);
     setButton1(narrativeData[option.nextNarrative].options[0].text);
     setButton2(narrativeData[option.nextNarrative].options[1].text);
+    setCurrentImage(narrativeData[option.nextNarrative].image);
   }
   return (
     <div className="App">
-      <NarrativeBlock text={narrativeData[currentNarrative].text} />
+      <NarrativeBlock
+        text={narrativeData[currentNarrative].text}
+        image={setCurrentImage}
+      />
       <Button label={button1} onClick={() => changeNarrative(0)} />
       <Button label={button2} onClick={() => changeNarrative(1)} />
     </div>
