@@ -4,6 +4,7 @@ import "./App.css";
 import Button from "./components/Button/index.js";
 import NarrativeBlock from "./components/NarrativeBlock/index.js";
 import narrativeData from "./components/NarrativeData/index.js";
+import dungeonbackground from "./dungeonbackground.jpg";
 
 // function to change the narrative text when a button is clicked
 
@@ -16,19 +17,17 @@ function App() {
     narrativeData[currentNarrative].options[1].text
   );
 
-  function changeNarrative() {
-    setCurrentNarrative(
-      narrativeData[currentNarrative].options[0].nextNarrative
-    );
-    setButton1(narrativeData[currentNarrative].options[0].text);
-    setButton2(narrativeData[currentNarrative].options[1].text);
+  function changeNarrative(optionIndex) {
+    const option = narrativeData[currentNarrative].options[optionIndex];
+    setCurrentNarrative(option.nextNarrative);
+    setButton1(narrativeData[option.nextNarrative].options[0].text);
+    setButton2(narrativeData[option.nextNarrative].options[1].text);
   }
-
   return (
     <div className="App">
       <NarrativeBlock text={narrativeData[currentNarrative].text} />
-      <Button label={button1} onClick={changeNarrative} />
-      <Button label={button2} onClick={changeNarrative} />
+      <Button label={button1} onClick={() => changeNarrative(0)} />
+      <Button label={button2} onClick={() => changeNarrative(1)} />
     </div>
   );
 }

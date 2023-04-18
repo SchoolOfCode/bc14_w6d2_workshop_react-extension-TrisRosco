@@ -3,6 +3,7 @@ import React from "react";
 
 let narrativeData = {
   1: {
+    image: "https://i.imgur.com/1Z1Z1Z1.jpg",
     text: "You are in a dark room. There is a door to your left and right. Which one do you take?",
     options: [
       {
@@ -16,6 +17,7 @@ let narrativeData = {
     ],
   },
   2: {
+    image: "https://i.imgur.com/1Z1Z1Z1.jpg",
     text: "You are in a cellar with a single candle. There is a door to your left and right. Which one do you take?",
     options: [
       {
@@ -77,7 +79,32 @@ let narrativeData = {
 
   7: {
     text: "The goblin attacks you. You are dead.",
-    options: [],
+    options: [
+      {
+        text: "Restart",
+        nextNarrative: 1,
+      },
+    ],
+  },
+
+  8: {
+    text: "You are in a small chamber, it appears you have reached a dead end.",
+    options: [
+      {
+        text: "Go back",
+        nextNarrative: 5,
+      },
+    ],
+  },
+
+  9: {
+    text: "You are in a small chamber, it appears you have reached a dead end.",
+    options: [
+      {
+        text: "Go back",
+        nextNarrative: 5,
+      },
+    ],
   },
 };
 
