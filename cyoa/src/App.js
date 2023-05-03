@@ -5,14 +5,20 @@ import Button from "./components/Button/index.js";
 import NarrativeBlock from "./components/NarrativeBlock/index.js";
 import NarrativeImage from "./components/NarrativeImage/index.js";
 import narrativeData from "./components/NarrativeData/index.js";
+import footstep from "./assets/footstep.wav";
 
 function App() {
   const [currentNarrative, setCurrentNarrative] = useState(1);
-  const [options, setOptions] = useState([]);
-  const [sounds, setSounds] = useState([]);
+  const [currentOptions, setCurrentOptions] = useState([]);
+  const [currentSounds, setCurrentSounds] = useState([]);
   const [currentImage, setCurrentImage] = useState(
     narrativeData[currentNarrative].image
   );
+
+  function playSound() {
+    const audio = new Audio(footstep);
+    audio.play();
+  }
 
   function changeNarrative(optionIndex) {
     const option = narrativeData[currentNarrative].options[optionIndex];
@@ -21,14 +27,15 @@ function App() {
 
   useEffect(() => {
     setCurrentImage(narrativeData[currentNarrative].image);
-    setOptions([
+    setCurrentOptions([
       narrativeData[currentNarrative].options[0].text,
       narrativeData[currentNarrative].options[1].text,
     ]);
-    setSounds([
+    setCurrentSounds([
       narrativeData[currentNarrative].options[0].sound,
       narrativeData[currentNarrative].options[1].sound,
     ]);
+    playSound();
   }, [currentNarrative]);
 
   return (
@@ -36,13 +43,13 @@ function App() {
       <NarrativeBlock text={narrativeData[currentNarrative].text} />
       <div className="button-container">
         <Button
-          label={options[0]}
-          sound={sounds[0]}
+          label={currentOptions[0]}
+          sound={currentSounds[0]}
           onClick={() => changeNarrative(0)}
         />
         <Button
-          label={options[1]}
-          sound={sounds[1]}
+          label={currentOptions[1]}
+          sound={currentSounds[1]}
           onClick={() => changeNarrative(1)}
         />
       </div>

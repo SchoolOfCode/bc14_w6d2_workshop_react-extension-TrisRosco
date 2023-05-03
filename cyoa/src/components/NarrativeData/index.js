@@ -101,6 +101,8 @@ const narrativeData = {
   },
 
   7: {
+    image:
+      "https://officialpsds.com/imageview/7y/2v/7y2v59_large.png?1521316559",
     text: "The goblin attacks you. You are dead.",
     options: [
       {
