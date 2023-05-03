@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useReducer } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Button from "./components/Button/index.js";
 import NarrativeBlock from "./components/NarrativeBlock/index.js";
@@ -8,6 +8,7 @@ import narrativeData from "./components/NarrativeData/index.js";
 import footstep from "./assets/footstep.wav";
 
 function App() {
+  //let currentImage2 = narrativeData[0].image;
   const [currentNarrative, setCurrentNarrative] = useState(1);
   const [currentOptions, setCurrentOptions] = useState([]);
   const [currentSounds, setCurrentSounds] = useState([]);
@@ -27,6 +28,7 @@ function App() {
 
   useEffect(() => {
     setCurrentImage(narrativeData[currentNarrative].image);
+    //currentImage2 = narrativeData[currentNarrative].image;
     setCurrentOptions([
       narrativeData[currentNarrative].options[0].text,
       narrativeData[currentNarrative].options[1].text,

@@ -31,7 +31,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: drift 1s infinite;
+  animation: drift  3s ease-in-out infinite, fadeIn 1.5s ease-in-out;
+
 }
 
 body {
@@ -78,14 +79,16 @@ button:hover
 
 @keyframes fadeIn {
   0% {
+    filter : blur(10px);
     opacity: 0;
   }
   100% {
+    filter : blur(0px);
     opacity: 1;
   }
 }
 
-@keyframes drift {
+@keyframes bop {
   0% {
     transform: translateX(0px);
   }
@@ -101,6 +104,17 @@ button:hover
   100% {
     transform: translateX(0px);
   }
+}
 
-
+@keyframes drift
+{
+  0% {
+    transform: translateX(2.5px) rotate(-0.5deg);
+  }
+  50% {
+    transform: translateX(-2.5px) rotate(0.5deg);
+  }
+  100% {
+    transform: translateX(2.5px) rotate(-0.5deg);
+  }
 }
