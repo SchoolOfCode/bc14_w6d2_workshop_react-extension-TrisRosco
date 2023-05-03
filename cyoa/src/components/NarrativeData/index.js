@@ -1,24 +1,32 @@
-// contains the data for the story that is then passed to the NarrativeBlock component
-import React from "react";
+const narrativeData = {
+  0: {
+    text: "Welcome to Tristan's awful Choose Your Own Adventure game. Click the button below to begin.",
+    options: [
+      {
+        text: "Start",
+        nextNarrative: 1,
+      },
+    ],
+  },
 
-let narrativeData = {
   1: {
-    image:
-      "https://media.moddb.com/images/mods/1/20/19754/2011-03-16_00021.jpg",
-    text: "You are in a dark room. There is a door to your left and right. Which one do you take?",
+    image: "https://i.imgur.com/GKSkln8.jpg",
+    text: "You are in a long corridor. A blinding light is eminating from one direction, and a dark void in the other. There is a door to your left and right. Which one do you take?",
     options: [
       {
         text: "Left",
         nextNarrative: 2,
+        sound: "./assets/footstep.wav",
       },
       {
         text: "Right",
         nextNarrative: 3,
+        sound: "./assets/door.wav",
       },
     ],
   },
   2: {
-    image: "https://i.imgur.com/1Z1Z1Z1.jpg",
+    image: "https://static1.bigstockphoto.com/3/5/3/large1500/353376416.jpg",
     text: "You are in a cellar with a single candle. There is a door to your left and right. Which one do you take?",
     options: [
       {
@@ -58,6 +66,7 @@ let narrativeData = {
   },
 
   5: {
+    image: "https://i.imgur.com/AAlLkvi.png",
     text: "You are in dimly lit, damp room. A small goblin approaches you. He asks you for a coin. What do you do?",
 
     options: [
