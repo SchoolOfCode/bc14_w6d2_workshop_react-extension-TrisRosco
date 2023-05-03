@@ -6,6 +6,11 @@ const narrativeData = {
         text: "Start",
         nextNarrative: 1,
       },
+
+      {
+        text: "Start",
+        nextNarrative: 1,
+      },
     ],
   },
 
