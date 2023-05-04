@@ -6,6 +6,7 @@ import NarrativeBlock from "./components/NarrativeBlock/index.js";
 import NarrativeImage from "./components/NarrativeImage/index.js";
 import narrativeData from "./components/NarrativeData/index.js";
 import footstep from "./assets/footstep.wav";
+import bgm from "./assets/bgm.mp3";
 
 function App() {
   //let currentImage2 = narrativeData[0].image;
@@ -21,10 +22,19 @@ function App() {
     audio.play();
   }
 
+  function playBGM() {
+    const audio = new Audio(bgm);
+    audio.play();
+  }
+
   function changeNarrative(optionIndex) {
     const option = narrativeData[currentNarrative].options[optionIndex];
     setCurrentNarrative(option.nextNarrative);
   }
+
+  useEffect(() => {
+    playBGM();
+  }, []);
 
   useEffect(() => {
     setCurrentImage(narrativeData[currentNarrative].image);

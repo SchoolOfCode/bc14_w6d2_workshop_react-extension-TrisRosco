@@ -73,7 +73,7 @@ const narrativeData = {
   },
 
   5: {
-    image: "https://i.imgur.com/AAlLkvi.png",
+    image: "https://i.imgur.com/a50ZpXq.png",
     text: "You are in dimly lit, damp room. A small goblin approaches you. He asks you for a coin. What do you do?",
 
     options: [

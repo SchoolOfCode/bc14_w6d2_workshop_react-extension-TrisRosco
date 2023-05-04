@@ -14,8 +14,12 @@ function Button(props) {
         props.onClick();
         playSound();
       }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.9 }}
+      whileHover={{ scale: 1.2, rotate: 1 }}
+      whileTap={{
+        scale: 0.8,
+        rotate: -2,
+        borderRadius: "30px",
+      }}
     >
       {props.label}
     </motion.button>
