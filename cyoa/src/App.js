@@ -9,7 +9,6 @@ import footstep from "./assets/footstep.wav";
 import bgm from "./assets/bgm.mp3";
 
 function App() {
-  //let currentImage2 = narrativeData[0].image;
   const [currentNarrative, setCurrentNarrative] = useState(1);
   const [currentOptions, setCurrentOptions] = useState([]);
   const [currentSounds, setCurrentSounds] = useState([]);
@@ -38,7 +37,6 @@ function App() {
 
   useEffect(() => {
     setCurrentImage(narrativeData[currentNarrative].image);
-    //currentImage2 = narrativeData[currentNarrative].image;
     setCurrentOptions([
       narrativeData[currentNarrative].options[0].text,
       narrativeData[currentNarrative].options[1].text,

@@ -14,11 +14,11 @@ function Button(props) {
         props.onClick();
         playSound();
       }}
-      whileHover={{ scale: 1.2, rotate: 1 }}
+      whileHover={{ scale: 1.1, rotate: 2 }}
       whileTap={{
         scale: 0.8,
         rotate: -2,
-        borderRadius: "30px",
+        boxShadow: "inset 7px 7px 1px rgba(0,0,0,0)",
       }}
     >
       {props.label}
