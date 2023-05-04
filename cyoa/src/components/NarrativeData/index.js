@@ -15,7 +15,7 @@ const narrativeData = {
   },
 
   1: {
-    image: "https://i.imgur.com/GKSkln8.jpg",
+    image: "https://i.imgur.com/wFYiIN9.png",
     text: "You are in a long corridor. A blinding light is eminating from one direction, and a dark void in the other. There is a door to your left and right. Which one do you take?",
     options: [
       {
@@ -31,7 +31,7 @@ const narrativeData = {
     ],
   },
   2: {
-    image: "https://static1.bigstockphoto.com/3/5/3/large1500/353376416.jpg",
+    image: "https://i.imgur.com/Nyc6E4o.png",
     text: "You are in a cellar with a single candle. There is a door to your left and right. Which one do you take?",
     options: [
       {
@@ -43,6 +43,7 @@ const narrativeData = {
   },
 
   3: {
+    image: "https://i.imgur.com/7DAmllf.png",
     text: "You are in a small chamber, it appears you have reached a dead end.",
     options: [
       {
@@ -57,6 +58,7 @@ const narrativeData = {
   },
 
   4: {
+    image: "https://i.imgur.com/7DAmllf.png",
     text: "You are in a small chamber, it appears you have reached a dead end.",
     options: [
       {
@@ -117,6 +119,7 @@ const narrativeData = {
   },
 
   8: {
+    image: "https://i.imgur.com/7DAmllf.png",
     text: "You are in a small chamber, it appears you have reached a dead end.",
     options: [
       {
@@ -131,6 +134,7 @@ const narrativeData = {
   },
 
   9: {
+    image: "https://i.imgur.com/7DAmllf.png",
     text: "You are in a small chamber, it appears you have reached a dead end.",
     options: [
       {

@@ -55,7 +55,9 @@ function App() {
           onClick={() => changeNarrative(1)}
         />
       </div>
-      <NarrativeImage image={currentImage} />
+      <div className="image-container">
+        <NarrativeImage image={currentImage} />
+      </div>
     </div>
   );
 }
