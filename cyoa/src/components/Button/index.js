@@ -2,17 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function Button(props) {
-  function playSound() {
-    const audio = new Audio(props.sound);
-    audio.play();
-  }
-
   return (
     <motion.button
       className="Button"
       onClick={() => {
         props.onClick();
-        playSound();
       }}
       whileHover={{ scale: 1.1, rotate: 2 }}
       whileTap={{

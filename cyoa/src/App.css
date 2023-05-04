@@ -12,6 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .App {
@@ -33,7 +34,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation:  drift-alternate 5s ease-in-out infinite;
+  animation:  drift 5s ease-in-out infinite;
 }
 
 img {

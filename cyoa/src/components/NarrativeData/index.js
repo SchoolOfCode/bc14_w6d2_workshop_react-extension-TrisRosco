@@ -1,6 +1,7 @@
 const narrativeData = {
   0: {
     text: "Welcome to Tristan's awful Choose Your Own Adventure game. Click the button below to begin.",
+    sound: "./assets/welcome.wav",
     options: [
       {
         text: "Start",
@@ -15,36 +16,38 @@ const narrativeData = {
   },
 
   1: {
-    image: "https://i.imgur.com/wFYiIN9.png",
-    text: "You are in a long corridor. A blinding light is eminating from one direction, and a dark void in the other. There is a door to your left and right. Which one do you take?",
+    image: "",
+    sound: "door",
+    text: "You are stood before a darkened passageway. In front of you stands a plinth, atop which sits a small bell and a candle. What do you do?",
     options: [
       {
-        text: "Left",
+        text: "Take the bell",
         nextNarrative: 2,
-        sound: "./assets/footstep.wav",
       },
       {
-        text: "Right",
+        text: "Take the candle",
         nextNarrative: 3,
-        sound: "./assets/door.wav",
       },
     ],
   },
   2: {
-    image: "https://i.imgur.com/Nyc6E4o.png",
-    text: "You are in a cellar with a single candle. There is a door to your left and right. Which one do you take?",
+    image: "https://i.imgur.com/7NBJKPO.png",
+    sound: "door",
+    text: "You gently take the bell from the plinth. As you do so, the candle turns to dust. You are left alone in the darkness. What do you do?",
     options: [
       {
-        text: "Left Door",
+        text: "Ring the bell",
         nextNarrative: 5,
       },
-      { text: "Right Door", nextNarrative: 4 },
+      { text: "Sit and wait", nextNarrative: 4 },
     ],
   },
 
   3: {
-    image: "https://i.imgur.com/7DAmllf.png",
-    text: "You are in a small chamber, it appears you have reached a dead end.",
+    image:
+      "https://officialpsds.com/imageview/7y/2v/7y2v59_large.png?1521316559",
+    sound: "footstep",
+    text: "The candle is too hot to touch. You are burned to death",
     options: [
       {
         text: "Go back",
@@ -59,6 +62,7 @@ const narrativeData = {
 
   4: {
     image: "https://i.imgur.com/7DAmllf.png",
+    sound: "footstep",
     text: "You are in a small chamber, it appears you have reached a dead end.",
     options: [
       {
@@ -74,8 +78,8 @@ const narrativeData = {
 
   5: {
     image: "https://i.imgur.com/a50ZpXq.png",
-    text: "You are in dimly lit, damp room. A small goblin approaches you. He asks you for a coin. What do you do?",
-
+    text: "You ring the bell. From the darkness you can hear a faint shuffling. A goblin appears before you. He asks for a coin. What do you do?",
+    sound: "./assets/door.wav",
     options: [
       {
         text: "Give him a coin",
@@ -89,14 +93,16 @@ const narrativeData = {
   },
 
   6: {
-    text: "The goblin thanks you and leaves. You are left alone in the room. There is a door to your left and right. Which one do you take?",
+    image: "https://i.imgur.com/92FUUqQ.png",
+    sound: "./assets/door.wav",
+    text: "The goblin thanks you and hands you a small bug. He's a cute little fella isn't he? Look at that nose! What do you do with the funny critter?",
     options: [
       {
-        text: "Left",
+        text: "Eat him",
         nextNarrative: 8,
       },
       {
-        text: "Right",
+        text: "Crush him with your hands",
         nextNarrative: 9,
       },
     ],
@@ -105,6 +111,7 @@ const narrativeData = {
   7: {
     image:
       "https://officialpsds.com/imageview/7y/2v/7y2v59_large.png?1521316559",
+    sound: "./assets/door.wav",
     text: "The goblin attacks you. You are dead.",
     options: [
       {
@@ -120,6 +127,7 @@ const narrativeData = {
 
   8: {
     image: "https://i.imgur.com/7DAmllf.png",
+    sound: "footstep",
     text: "You are in a small chamber, it appears you have reached a dead end.",
     options: [
       {
@@ -135,6 +143,7 @@ const narrativeData = {
 
   9: {
     image: "https://i.imgur.com/7DAmllf.png",
+    sound: "footstep",
     text: "You are in a small chamber, it appears you have reached a dead end.",
     options: [
       {

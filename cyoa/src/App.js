@@ -6,24 +6,31 @@ import NarrativeBlock from "./components/NarrativeBlock/index.js";
 import NarrativeImage from "./components/NarrativeImage/index.js";
 import narrativeData from "./components/NarrativeData/index.js";
 import footstep from "./assets/footstep.wav";
+import door from "./assets/door.wav";
 import bgm from "./assets/bgm.mp3";
 
 function App() {
   const [currentNarrative, setCurrentNarrative] = useState(1);
   const [currentOptions, setCurrentOptions] = useState([]);
-  const [currentSounds, setCurrentSounds] = useState([]);
+  const [currentSound, setCurrentSound] = useState([]);
   const [currentImage, setCurrentImage] = useState(
     narrativeData[currentNarrative].image
   );
 
-  function playSound() {
-    const audio = new Audio(footstep);
-    audio.play();
-  }
-
   function playBGM() {
     const audio = new Audio(bgm);
     audio.play();
+  }
+
+  function playSound() {
+    const doorfx = new Audio(door);
+    const footstepfx = new Audio(footstep);
+    if (currentSound === "door") {
+      doorfx.play();
+    }
+    if (currentSound === "footstep") {
+      footstepfx.play();
+    }
   }
 
   function changeNarrative(optionIndex) {
@@ -36,14 +43,11 @@ function App() {
   }, []);
 
   useEffect(() => {
+    setCurrentSound(narrativeData[currentNarrative].sound);
     setCurrentImage(narrativeData[currentNarrative].image);
     setCurrentOptions([
       narrativeData[currentNarrative].options[0].text,
       narrativeData[currentNarrative].options[1].text,
-    ]);
-    setCurrentSounds([
-      narrativeData[currentNarrative].options[0].sound,
-      narrativeData[currentNarrative].options[1].sound,
     ]);
     playSound();
   }, [currentNarrative]);
@@ -54,17 +58,19 @@ function App() {
       <div className="button-container">
         <Button
           label={currentOptions[0]}
-          sound={currentSounds[0]}
-          onClick={() => changeNarrative(0)}
+          onClick={() => {
+            changeNarrative(0);
+          }}
         />
         <Button
           label={currentOptions[1]}
-          sound={currentSounds[1]}
-          onClick={() => changeNarrative(1)}
+          onClick={() => {
+            changeNarrative(1);
+          }}
         />
       </div>
       <div className="image-container">
-        <NarrativeImage image={currentImage} />
+        <NarrativeImage image={currentImage} sound={currentSound} />
       </div>
     </div>
   );
